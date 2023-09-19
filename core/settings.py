@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure--soq+mo$h0vs*7y^i4=lrbw@2+g!&%4r#($yo@h=mi%4ypp-8m
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = [".vercel.app", ".now.sh", "127.0.0.1",]
+ALLOWED_HOSTS = ["*"]
 CSRF_TRUSTED_ORIGINS = ["https://model-sharply-dane.ngrok-free.app", "https://darius-cafe-web.vercel.app"]
 CORS_ORIGIN_WHITELIST = ["https://model-sharply-dane.ngrok-free.app", "https://darius-cafe-web.vercel.app"]
 
@@ -38,10 +38,12 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'corsheaders',
     'feeds',
 ]
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
