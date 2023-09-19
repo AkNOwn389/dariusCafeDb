@@ -8,7 +8,7 @@ urlpatterns = [
     
     path('feedback/', feedback_api),
     path('get-feedback/', get_user_feedback),
-    path('', admin.site.urls),
+    path('admin', admin.site.urls),
     
     
 ]
