@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure--soq+mo$h0vs*7y^i4=lrbw@2+g!&%4r#($yo@h=mi%4ypp-8m
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
@@ -76,6 +76,14 @@ WSGI_APPLICATION = 'core.wsgi.application'
 
 DATABASES = {
     'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': "fzjhyyzz",
+        'USER': "fzjhyyzz",
+        'PASSWORD': "2Z99ZLxMKXeEXAPK0uLiFLT1GUh-CIw3",
+        'HOST': "cornelius.db.elephantsql.com",
+        'PORT': '5432',
+    },
+    'default1': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
     }

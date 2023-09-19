@@ -16,7 +16,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from feeds.views import feedback_api, get_user_feedback
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path('', admin.site.urls),
+    path('api/feedback', feedback_api),
+    path('api/get-feedback', get_user_feedback),
 ]
