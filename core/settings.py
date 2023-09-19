@@ -25,8 +25,9 @@ SECRET_KEY = 'django-insecure--soq+mo$h0vs*7y^i4=lrbw@2+g!&%4r#($yo@h=mi%4ypp-8m
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["*"]
-
+ALLOWED_HOSTS = [".vercel.app", ".now.sh", "127.0.0.1",]
+CSRF_TRUSTED_ORIGINS = ["https://model-sharply-dane.ngrok-free.app", "https://darius-cafe-web.vercel.app"]
+CORS_ORIGIN_WHITELIST = ["https://model-sharply-dane.ngrok-free.app", "https://darius-cafe-web.vercel.app"]
 
 # Application definition
 
@@ -130,3 +131,16 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+CORS_ORIGIN_ALLOW_ALL = True
+CORS_ALLOW_CREDENTIALS = True
+import os
+
+STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "staticDirs/"),
+]
