@@ -24,7 +24,7 @@ urlpatterns = [
     path('', admin.site.urls),
     path('api/feedback', feedback_api),
     path('api/get-feedback', get_user_feedback),
-]
+]+ static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT) + static(settings.STATIC_URL, document_root = settings.STATIC_ROOT)
 
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
