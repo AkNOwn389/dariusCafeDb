@@ -2,7 +2,6 @@ from django.shortcuts import render
 from django.views.decorators.csrf import csrf_exempt
 from django.views.decorators.http import require_POST
 from rest_framework.decorators import api_view
-from rest_framework.response import Response
 from .models import ClassicCafeFeedbackModel
 from django.core.exceptions import ValidationError
 from .serializers import UserFeedbackSerializer
@@ -15,10 +14,10 @@ def get_user_feedback(request):
     if request.method == 'GET':
         feeds = ClassicCafeFeedbackModel.objects.all()
         serializer = UserFeedbackSerializer(feeds, many=True)
-        return Response({'status': True, 'data': serializer.data})
+        return JsonResponse({'status': True, 'data': serializer.data})
     else:
         response_data = {'status': False, 'message': 'Method Not Allowed.'}
-        return Response(response_data, status=405)
+        return JsonResponse(response_data, status=405)
 
 def get_rate_value(rate):
     for i, a in dict(ClassicCafeFeedbackModel.status_choice.choices).items():

@@ -32,6 +32,8 @@ CORS_ORIGIN_WHITELIST = ["https://model-sharply-dane.ngrok-free.app", "https://d
 # Application definition
 
 INSTALLED_APPS = [
+    "admin_interface",
+    "colorfield",
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
